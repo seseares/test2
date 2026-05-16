@@ -1,0 +1,55 @@
+<!-- 文档类型声明，告诉浏览器使用HTML5标准解析 -->
+<!DOCTYPE html>
+<!-- 设置页面语言为中文 -->
+<html lang="zh-CN">
+<head>
+    <!-- 设置页面字符编码为UTF-8，支持中文显示 -->
+    <meta charset="UTF-8">
+    <!-- 视口设置，使页面在移动设备上正确显示和缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 页面标题，显示在浏览器标签页 -->
+    <title>简易留言板</title>
+    <!-- 引入外部CSS样式文件 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 主容器，用于居中显示和限制宽度 -->
+    <div class="container">
+        <!-- 页面标题 -->
+        <h1>📝 简易留言板</h1>
+
+        <!-- 留言发布表单 -->
+        <form id="messageForm" class="message-form">
+            <!-- 昵称输入框，required属性表示必填 -->
+            <input
+                type="text"
+                id="nameInput"
+                placeholder="你的昵称"
+                required
+            >
+            <!-- 留言内容文本域，rows设置默认显示行数 -->
+            <textarea
+                id="messageInput"
+                placeholder="写下你的留言..."
+                rows="3"
+                required
+            ></textarea>
+            <!-- 提交按钮 -->
+            <button type="submit">发布留言</button>
+        </form>
+
+        <!-- 留言列表区域 -->
+        <div class="messages-section">
+            <!-- 列表标题，count用于显示留言数量 -->
+            <h2>留言列表 <span id="count">(0)</span></h2>
+            <!-- 留言容器，所有留言将通过JavaScript动态插入这里 -->
+            <div id="messagesList" class="messages-list">
+                <div class="empty-state">还没有留言，快来发布第一条吧！</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 引入JavaScript逻辑文件 -->
+    <script src="app.js"></script>
+</body>
+</html>
